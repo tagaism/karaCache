@@ -1,37 +1,32 @@
 import Interfaces.ICache;
 
-public class FIFOCache implements ICache {
-    @Override
-    public void put(String key, int val) {
-        // throw new UnsupportedOperationException(message: "Unimplemented method.");
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+
+public class FIFOCache<K, V> implements ICache {
+    private final int capacity;
+    private final Map<K, V> dictMap;
+    private final LinkedList<K> queue;
+
+    public FIFOCach(int capacity) {
+        this.capacity = capacity;
+        this.dictMap = new HashMap<>();
+        this.queue = new LinkedList<>();
     }
-    
     @Override
-    public int get(String key) {
-        return 11;
-        // throw new UnsupportedOperationException(message: "Unimplemented method.");
+    public  void put(K key, V val) {
+        if(containsKey(key)) {
+            dictMap.put(key, val);
+            queue.remove(key);
+            queue.addLast(key);
+        } else {
+            
+        }
     }
 
     @Override
-    public int remove(String key) {
-        return 17;
-        // throw new UnsupportedOperationException(message: "Unimplemented method.");
-    }
-
-    @Override
-    public void clear() {
-        // throw new UnsupportedOperationException(message: "Unimplemented method.");
-    }
-
-    @Override
-    public int getSize() {
-        return 28;
-        // throw new UnsupportedOperationException(message: "Unimplemented method.");
-    }
-
-    @Override
-    public boolean containsKey(String key) {
-        return true;
-        // throw new UnsupportedOperationException(message: "Unimplemented method.");
+    public boolean containsKey(K key) {
+        return  this.dictMap.containsKey(key);
     }
 }
