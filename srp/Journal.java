@@ -1,5 +1,8 @@
 package srp;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,12 +14,24 @@ public class Journal {
         entries.add("" + (++count) + ": " + text);
     }
 
-    public void removeEntry(int idx) {
+public void removeEntry(int idx) {
         entries.remove(idx);
     }
 
     @Override
     public String toString() {
         return String.join(System.lineSeparator(), entries);
+    }
+}
+
+class Persistence {
+    public void saveToFile(Journal journal, String filename, boolean overwrite) throws FileNotFoundException {
+        if(overwrite || new File(filename).exists()) {
+            try(PrintStream out = new PrintStream(filename)) {
+                out.println(toString());
+            } catch(e) {
+                System.err.println("File not found! You pank!! " + e.getMessage()); 
+            }
+        }
     }
 }

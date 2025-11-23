@@ -7,5 +7,8 @@ public class main {
         j.addEntry("I ride a JR Central Line to get to work.");
         System.out.println(j);
 
+        Persistence p = new Persistence();
+        p.saveToFile(j, "point.txt", true);
+        
     }
 }

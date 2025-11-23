@@ -1,3 +1,4 @@
+package Interfaces;
 
 public interface  ICache {
     void put(String key, int val);
