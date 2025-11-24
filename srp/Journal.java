@@ -28,9 +28,7 @@ class Persistence {
     public void saveToFile(Journal journal, String filename, boolean overwrite) throws FileNotFoundException {
         if(overwrite || new File(filename).exists()) {
             try(PrintStream out = new PrintStream(filename)) {
-                out.println(toString());
-            } catch(e) {
-                System.err.println("File not found! You pank!! " + e.getMessage()); 
+                out.println(journal.toString());
             }
         }
     }
