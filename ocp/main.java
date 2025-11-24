@@ -29,7 +29,8 @@ public class main {
 
         System.out.println(new ColorSpecification(Color.BLUE).isSatisfied(p4));
         System.out.println(new SizeSpecification(Size.MIDDLE).isSatisfied(p2));
-        System.out.println("--------------------refactored----------------");
+        
+        System.out.println("--------------------refactored to OCP----------------");
 
         BetterFiler bf = new BetterFiler();
         System.out.println("BF REDS: ");
