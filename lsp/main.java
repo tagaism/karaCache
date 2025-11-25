@@ -5,7 +5,7 @@ public class main {
         int width = rec.getWidth();
         rec.setWidth(10);
         System.out.println(rec.getArea());
-        System.out.println(rec.getHeight() * rec.getWidth());
+        System.out.println(rec.getHeight() * width);
     }
     public static void main(String[] args) {
         Rectangle recc = new Rectangle(4, 3);
