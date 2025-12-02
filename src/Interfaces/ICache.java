@@ -5,7 +5,7 @@ public interface  ICache {
 
     int get(String key);
 
-    int remove(String key);
+    void remove(String key);
 
     //optional methods
 
