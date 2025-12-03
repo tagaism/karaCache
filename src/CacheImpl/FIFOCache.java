@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import java.util.Map;
 
 public class FIFOCache<K, V> implements ICache {
-    int capacity;
-    String server;
+    private final int capacity;
+    private String server;
     
     public FIFOCache(int capacity) {
         this.capacity = capacity;
@@ -15,32 +15,34 @@ public class FIFOCache<K, V> implements ICache {
 
     @Override
     public void put(String k, int v) {
-        throw new UnsupportedOperationException(message: "Unimplemented method 'put'");
+        // throw new UnsupportedOperationException(message: "Unimplemented method 'put'");
     }
 
     @Override
     public void get(String k) {
-        throw new UnsupportedOperationException(message: "Unimplemented method 'get'");
+        // throw new UnsupportedOperationException(message: "Unimplemented method 'get'");
     }
 
     @Override
     public void remove(String k) {
-        throw new UnsupportedOperationException(message: "Unimplemented method 'remove'");
+        // throw new UnsupportedOperationException(message: "Unimplemented method 'remove'");
     }
     
     @Override
     public void clear() {
-        throw new UnsupportedOperationException(message: "Unimplemented method 'remove'");
+        // throw new UnsupportedOperationException(message: "Unimplemented method 'remove'");
     }
     
     @Override
     public int getSize() {
-        throw new UnsupportedOperationException(message: "Unimplemented method 'getSize'");
+        return 1;
+        // throw new UnsupportedOperationException(message: "Unimplemented method 'getSize'");
     }
     
     @Override
     public boolean containsKey() {
-        throw new UnsupportedOperationException(message: "Unimplemented method 'containsKey'");
+        return false;
+        // throw new UnsupportedOperationException(message: "Unimplemented method 'containsKey'");
     }
 
 
