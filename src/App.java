@@ -1,9 +1,13 @@
+import Interfaces.ICache;
+
 public class App {
-    public static void main(String[] args) throws Exception{
-        System.out.print("SDLFKSDFJLKDJ");
-        
+    public static void main(String[] args) throws Exception{        
+        testFIFO();
     }
 
+    private static void testFIFO() {
+        ICache fifoCache = new FIFOCache();
+    }
     // private static void testFIFO() {
     //     ICache fifoCache = new FIFOCache();
 

@@ -27,6 +27,22 @@ public class FIFOCache<K, V> implements ICache {
     public void remove(String k) {
         throw new UnsupportedOperationException(message: "Unimplemented method 'remove'");
     }
+    
+    @Override
+    public void clear() {
+        throw new UnsupportedOperationException(message: "Unimplemented method 'remove'");
+    }
+    
+    @Override
+    public int getSize() {
+        throw new UnsupportedOperationException(message: "Unimplemented method 'getSize'");
+    }
+    
+    @Override
+    public boolean containsKey() {
+        throw new UnsupportedOperationException(message: "Unimplemented method 'containsKey'");
+    }
+
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
